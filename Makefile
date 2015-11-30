@@ -12,6 +12,12 @@
 
 NAME = libft.a
 
+PINC = includes
+PSRC = srcs
+POBJ = obj
+
+INC = libft.h
+
 SRC = ft_memset.c \
 	  ft_bzero.c \
 	  ft_memcpy.c \
@@ -79,21 +85,25 @@ SRC = ft_memset.c \
 	  ft_splittolst.c \
 	  ft_lstcount.c
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(patsubst %.c, $(POBJ)/%.o, $(SRC))
+INCF = $(patsubst %, $(PINC)/%, $(INC))
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I $(PINC)
 
-all: $(NAME)
+all: $(POBJ) $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $@ $(OBJ)
 	ranlib $@
 
-%.o: %.c
+$(POBJ)/%.o: $(PSRC)/%.c $(INCF)
 	gcc $(CFLAGS) -c $< -o $@
 
+$(POBJ):
+	mkdir $@
+
 clean:
-	/bin/rm -Rf $(OBJ)
+	/bin/rm -rf $(POBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)
