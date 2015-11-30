@@ -12,11 +12,13 @@
 
 NAME = libft.a
 
-PINC = includes
-PSRC = srcs
-POBJ = obj
+CPATH = srcs
+HPATH = includes
+OPATH = obj
 
-INC = libft.h
+CFLAGS = -Wall -Wextra -Werror -I $(HPATH)
+
+HEADER = libft.h
 
 SRC = ft_memset.c \
 	  ft_bzero.c \
@@ -85,28 +87,33 @@ SRC = ft_memset.c \
 	  ft_splittolst.c \
 	  ft_lstcount.c
 
-OBJ = $(patsubst %.c, $(POBJ)/%.o, $(SRC))
-INCF = $(patsubst %, $(PINC)/%, $(INC))
 
-CFLAGS = -Wall -Wextra -Werror -I $(PINC)
+HFILES = $(patsubst %,$(HPATH)/%, $(HEADER))
+CFILES = $(patsubst %,$(CPATH)/%, $(SRC))
+OFILES = $(patsubst %.c,$(OPATH)/%.o, $(SRC))
 
-all: $(POBJ) $(NAME)
+all: $(OPATH) $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $@ $^
-	ranlib $@
+$(NAME): $(OFILES)
+	@echo "Building $(NAME)"
+	@ar rc $@ $^
+	@ranlib $@
 
-$(POBJ)/%.o: $(PSRC)/%.c $(INCF)
-	gcc $(CFLAGS) -c $< -o $@
+$(OPATH)/%.o: $(CPATH)/%.c $(HFILES)
+	@echo "Creating file $@"
+	@gcc $(CFLAGS) -c $< -o $@
 
-$(POBJ):
-	mkdir $@
+$(OPATH):
+	@echo "Creating building directory"
+	@mkdir $@
 
 clean:
-	/bin/rm -rf $(POBJ)
+	@echo "Del building files"
+	@/bin/rm -rf $(OPATH)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@echo "Del $(NAME)"
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 
