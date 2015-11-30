@@ -93,7 +93,7 @@ CFLAGS = -Wall -Wextra -Werror -I $(PINC)
 all: $(POBJ) $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $@ $(OBJ)
+	ar rc $@ $^
 	ranlib $@
 
 $(POBJ)/%.o: $(PSRC)/%.c $(INCF)
