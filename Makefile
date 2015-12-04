@@ -6,19 +6,18 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 13:01:21 by dolewski          #+#    #+#              #
-#    Updated: 2015/11/29 18:20:26 by dolewski         ###   ########.fr        #
+#    Updated: 2015/11/30 10:22:58 by dolewski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CPATH = srcs
-HPATH = includes
-OPATH = obj
-
-CFLAGS = -Wall -Wextra -Werror -I $(HPATH)
-
-HEADER = libft.h
+CC =	/usr/bin/clang
+RM =	/bin/rm
+MAKE =	/usr/bin/make
+MKDIR =	/bin/mkdir
+AR =	/usr/bin/ar
+RANLIB = /usr/bin/ranlib
 
 SRC = ft_memset.c \
 	  ft_bzero.c \
@@ -87,33 +86,39 @@ SRC = ft_memset.c \
 	  ft_splittolst.c \
 	  ft_lstcount.c
 
+OBJ = $(patsubst %.c, $(OPATH)/%.o, $(SRC))
 
-HFILES = $(patsubst %,$(HPATH)/%, $(HEADER))
-CFILES = $(patsubst %,$(CPATH)/%, $(SRC))
-OFILES = $(patsubst %.c,$(OPATH)/%.o, $(SRC))
+CFLAGS = -Wall -Wextra -Werror -I $(HPATH)
+
+ROOT =		$(shell /bin/pwd)
+OPATH =		$(ROOT)/objs
+CPATH =		$(ROOT)/srcs
+HPATH =		$(ROOT)/includes
+
+.PHONY: all clean fclean re
 
 all: $(OPATH) $(NAME)
 
-$(NAME): $(OFILES)
-	@echo "Building $(NAME)"
-	@ar rc $@ $^
-	@ranlib $@
+$(NAME): $(OBJ)
+	@echo "Building $@"
+	@$(AR) rc $@ $(OBJ)
+	@$(RANLIB) $@
 
-$(OPATH)/%.o: $(CPATH)/%.c $(HFILES)
-	@echo "Creating file $@"
-	@gcc $(CFLAGS) -c $< -o $@
+$(OPATH)/%.o: $(CPATH)/%.c $^
+	@echo "Creeating file $@"
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OPATH):
-	@echo "Creating building directory"
-	@mkdir $@
+	@echo "Ceating objs directory"
+	@$(MKDIR) $@
 
 clean:
-	@echo "Del building files"
-	@/bin/rm -rf $(OPATH)
+	@echo "Deleting objs"
+	@$(RM) -Rf $(OPATH)
 
 fclean: clean
-	@echo "Del $(NAME)"
-	@/bin/rm -f $(NAME)
+	@echo "Deleting $(NAME)"
+	@$(RM) -f $(NAME)
 
 re: fclean all
 
