@@ -19,8 +19,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (!dst || !src)
 		return (NULL);
 	str = (unsigned char *)malloc(sizeof(*str) * len);
-	ft_memcpy(str, src, len);
-	ft_memcpy(dst, str, len);
-	free(str);
+	if (str != NULL)
+	{
+		ft_memcpy(str, src, len);
+		ft_memcpy(dst, str, len);
+		free(str);
+	}
 	return (dst);
 }
