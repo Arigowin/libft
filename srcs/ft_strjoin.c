@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 10:18:23 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/29 15:28:40 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/10 21:07:08 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new = NULL;
 	if (s1 != NULL && s2 != NULL)
 	{
-		new = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+		new = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 		if (new != NULL)
 		{
 			while (s1[++i])
