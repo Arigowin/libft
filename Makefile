@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 13:01:21 by dolewski          #+#    #+#              #
-#    Updated: 2015/12/09 17:36:34 by dolewski         ###   ########.fr        #
+#    Updated: 2015/12/11 20:13:18 by dolewski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,11 +106,11 @@ $(NAME): $(OBJ)
 	@$(RANLIB) $@
 
 $(OPATH)/%.o: $(CPATH)/%.c $^
-	@echo "Creeating file $@"
+	@echo "Creating file $@"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OPATH):
-	@echo "Ceating objs directory"
+	@echo "Creating objs directory"
 	@$(MKDIR) $@
 
 clean:
