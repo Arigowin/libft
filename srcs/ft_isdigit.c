@@ -5,16 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 15:26:11 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/23 15:26:13 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:45:46 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:45:47 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int			ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
+	if (c >= '0' && c <= '9')
 		return (1);
-	return (0);
+	else
+		return (0);
 }

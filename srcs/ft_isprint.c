@@ -5,16 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:11:00 by dolewski          #+#    #+#             */
-/*   Updated: 2015/11/23 17:11:01 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/09 18:45:54 by dolewski          #+#    #+#             */
+/*   Updated: 2015/12/09 18:46:00 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int			ft_isprint(int c)
 {
-	if (c >= 040 && c <= 0176)
+	if (c >= ' ' && c <= '~')
 		return (1);
-	return (0);
+	else
+		return (0);
 }
