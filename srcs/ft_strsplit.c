@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 13:00:09 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/12 12:22:08 by dolewski         ###   ########.fr       */
+/*   Updated: 2015/12/14 13:08:03 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char				**ft_strsplit(const char *s, char c)
 	i = 0;
 	k = 0;
 	j = 0;
-	tab = (char **)malloc(sizeof(char *) * nb_word(s, c));
+	tab = (char **)malloc(sizeof(char *) * (nb_word(s, c) + 1));
 	if (tab == NULL)
 		return (NULL);
 	while (j < nb_word(s, c) && s[i])
@@ -58,6 +58,6 @@ char				**ft_strsplit(const char *s, char c)
 		i++;
 		k++;
 	}
-	tab[j] = 0;
+	tab[j] = NULL;
 	return (tab);
 }
