@@ -87,7 +87,8 @@ SRC = ft_memset.c \
 	  ft_lstcount.c \
 	  ft_free_tbl_s.c \
 	  ft_lstfileadd.c \
-	  ft_lstfilenew.c
+	  ft_lstfilenew.c \
+	  ft_lstfilefree.c
 
 OBJ = $(patsubst %.c, $(OPATH)/%.o, $(SRC))
 

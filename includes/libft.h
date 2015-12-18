@@ -99,5 +99,6 @@ typedef struct		s_file
 
 t_file				*ft_lstfilenew(char *data, int fd);
 void				ft_lstfileadd(t_file **lstfile, t_file *new);
+void				ft_lstfilefree(t_file **file);
 
 #endif
