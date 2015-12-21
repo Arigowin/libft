@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 13:01:21 by dolewski          #+#    #+#              #
-#    Updated: 2015/12/21 15:43:47 by dolewski         ###   ########.fr        #
+#    Updated: 2015/12/21 18:03:08 by dolewski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,6 +107,7 @@ $(NAME): $(OBJ)
 	@echo "$(NAME) : Building $@"
 	@$(AR) rc $@ $(OBJ)
 	@$(RANLIB) $@
+	@echo "\x1B[32mDone !\x1B[0m"
 
 $(OPATH)/%.o: $(CPATH)/%.c
 	@echo "$(NAME) : Creating file $@"
@@ -123,6 +124,7 @@ clean:
 fclean: clean
 	@echo "$(NAME) : Deleting $(NAME)"
 	@$(RM) -f $(NAME)
+	@echo "\x1B[32mDone !\x1B[0m"
 
 re: fclean all
 
