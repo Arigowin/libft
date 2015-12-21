@@ -14,7 +14,7 @@
 
 void				ft_lstfileadd(t_file **lstfile, t_file *new)
 {
-	t_list *tmp;
+	t_file *tmp;
 
 	tmp = *lstfile;
 	while (tmp->next)

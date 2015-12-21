@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 13:01:21 by dolewski          #+#    #+#              #
-#    Updated: 2015/12/18 15:14:46 by dolewski         ###   ########.fr        #
+#    Updated: 2015/12/21 15:43:47 by dolewski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,24 +104,24 @@ HPATH =		$(ROOT)/includes
 all: $(OPATH) $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "Building $@"
+	@echo "$(NAME) : Building $@"
 	@$(AR) rc $@ $(OBJ)
 	@$(RANLIB) $@
 
 $(OPATH)/%.o: $(CPATH)/%.c
-	@echo "Creating file $@"
+	@echo "$(NAME) : Creating file $@"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OPATH):
-	@echo "Creating objs directory"
+	@echo "$(NAME) : Creating objs directory"
 	@$(MKDIR) $@
 
 clean:
-	@echo "Deleting objs"
+	@echo "$(NAME) : Deleting objs"
 	@$(RM) -Rf $(OPATH)
 
 fclean: clean
-	@echo "Deleting $(NAME)"
+	@echo "$(NAME) : Deleting $(NAME)"
 	@$(RM) -f $(NAME)
 
 re: fclean all
