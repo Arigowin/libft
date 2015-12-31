@@ -107,7 +107,7 @@ $(NAME): $(OBJ)
 	@echo "$(NAME) : Building $@"
 	@$(AR) rc $@ $(OBJ)
 	@$(RANLIB) $@
-	@echo "\x1B[32mDone !\x1B[0m"
+	@echo "\033[32mDone !\033[0m"
 
 $(OPATH)/%.o: $(CPATH)/%.c
 	@echo "$(NAME) : Creating file $@"
@@ -124,7 +124,7 @@ clean:
 fclean: clean
 	@echo "$(NAME) : Deleting $(NAME)"
 	@$(RM) -f $(NAME)
-	@echo "\x1B[32mDone !\x1B[0m"
+	@echo "\033[32mDone !\033[0m"
 
 re: fclean all
 
