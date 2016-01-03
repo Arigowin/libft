@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:02:00 by dolewski          #+#    #+#             */
-/*   Updated: 2015/12/18 15:15:17 by dolewski         ###   ########.fr       */
+/*   Updated: 2016/01/03 09:54:21 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,5 @@ char				*ft_itoa_base(int n, int base);
 t_list				*ft_splittolst(const char *s, char c);
 int					ft_lstcount(t_list *lst);
 void				ft_free_tbl_s(char **tbl);
-
-typedef struct		s_file
-{
-	char			*data;
-	int				fd;
-	struct s_file	*next;
-}					t_file;
-
-t_file				*ft_lstfilenew(char *data, int fd);
-void				ft_lstfileadd(t_file **lstfile, t_file *new);
-void				ft_lstfilefree(t_file **file);
 
 #endif
