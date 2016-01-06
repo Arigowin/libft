@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 13:01:21 by dolewski          #+#    #+#              #
-#    Updated: 2016/01/03 09:54:28 by dolewski         ###   ########.fr        #
+#    Updated: 2016/01/06 13:13:08 by dolewski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRC = ft_memset.c \
 	  ft_strnequ.c \
 	  ft_strsub.c \
 	  ft_strjoin.c \
+	  ft_properstrjoin.c \
 	  ft_strtrim.c \
 	  ft_strsplit.c \
 	  ft_itoa.c \
