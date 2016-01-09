@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_properstrjoin(char **dest, char *src)
+int		ft_strproperjoin(char **dest, char *src)
 {
 	char			*tmp;
 
