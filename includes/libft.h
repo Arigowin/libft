@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:02:00 by dolewski          #+#    #+#             */
-/*   Updated: 2016/01/06 13:13:33 by dolewski         ###   ########.fr       */
+/*   Updated: 2016/01/10 10:51:21 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # include <string.h>
 
 /*
- * mem
- */
+** mem
+*/
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
@@ -40,8 +40,8 @@ void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 
 /*
- * string
- */
+** string
+*/
 
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
@@ -72,8 +72,8 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
 /*
- * is
- */
+** is
+*/
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -84,8 +84,8 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 
 /*
- * put
- */
+** put
+*/
 
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
@@ -101,8 +101,8 @@ void				ft_putstr_color(char *color, char *s);
 void				ft_putnbrendl(int n);
 
 /*
- * lst
- */
+** lst
+*/
 
 typedef struct		s_list
 {
@@ -121,8 +121,8 @@ void				ft_lstpushback(t_list **alst, t_list *new);
 int					ft_lstcount(t_list *lst);
 
 /*
- * other
- */
+** other
+*/
 
 t_list				*ft_splittolst(const char *s, char c);
 void				ft_free_tbl_s(char **tbl);
