@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/10 10:45:12 by dolewski          #+#    #+#             */
-/*   Updated: 2016/01/10 10:45:18 by dolewski         ###   ########.fr       */
+/*   Updated: 2016/01/10 11:12:42 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_putstr_color(char *color, char *s)
 {
-	write(1, color, 1);
+	write(1, color, 7);
 	write(1, s, ft_strlen(s));
-	write(1, DEFAULT_COLOR, 1);
+	write(1, DEFAULT_COLOR, 7);
 }
