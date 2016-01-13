@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:02:00 by dolewski          #+#    #+#             */
-/*   Updated: 2016/01/10 10:51:21 by dolewski         ###   ########.fr       */
+/*   Updated: 2016/01/13 12:00:26 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 int					ft_strproperjoin(char **dest, char *src);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
+char				*ft_strproperjoin(char *s1, char *s2);
 
 /*
 ** is

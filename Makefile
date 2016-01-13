@@ -6,7 +6,7 @@
 #    By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 13:01:21 by dolewski          #+#    #+#              #
-#    Updated: 2016/01/06 13:13:08 by dolewski         ###   ########.fr        #
+#    Updated: 2016/01/13 11:59:32 by dolewski         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC = ft_memalloc.c \
 	  ft_strproperjoin.c \
 	  ft_strtrim.c \
 	  ft_strsplit.c \
+	  ft_strproperjoin.c \
 	   \
 	  ft_isalpha.c \
 	  ft_isdigit.c \
