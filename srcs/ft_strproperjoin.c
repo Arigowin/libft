@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 11:59:58 by dolewski          #+#    #+#             */
-/*   Updated: 2016/01/13 12:02:16 by dolewski         ###   ########.fr       */
+/*   Updated: 2016/01/13 12:04:53 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,9 @@ char	*ft_strproperjoin(char *s1, char *s2)
 	if (!s1 && !s2)
 		return (NULL);
 	if (!s1)
-	{
 		tmp = ft_strdup(s2);
-		ft_strdel(&s1);
-	}
 	else if (!s2)
-	{
 		tmp = ft_strdup(s1);
-		ft_strdel(&s2);
-	}
 	else
 	{
 		tmp = ft_strjoin(s1, s2);
