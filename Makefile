@@ -95,7 +95,6 @@ SRC = ft_memalloc.c \
 	  ft_itoa_base.c \
 	  ft_itoa.c \
 	  ft_copyt2d.c \
-	  ft_freet2d.c \
 	  get_next_line.c
 
 OBJ = $(patsubst %.c, $(OPATH)/%.o, $(SRC))
