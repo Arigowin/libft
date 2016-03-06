@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_color.c                                  :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/10 10:45:12 by dolewski          #+#    #+#             */
-/*   Updated: 2016/02/13 18:18:55 by dolewski         ###   ########.fr       */
+/*   Created: 2015/12/10 15:01:22 by dolewski          #+#    #+#             */
+/*   Updated: 2016/01/09 11:23:34 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	ft_putstr_color(char *color, char *s)
-{
-	write(1, color, ft_strlen(color));
-	write(1, s, ft_strlen(s));
-	write(1, DEFAULT_COLOR, 6);
-}
+# define BUFF_SIZE 512
+
+int					get_next_line(const int fd, char **line);
+
+#endif

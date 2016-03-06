@@ -6,7 +6,7 @@
 /*   By: dolewski <dolewski@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:02:00 by dolewski          #+#    #+#             */
-/*   Updated: 2016/01/25 16:32:35 by dolewski         ###   ########.fr       */
+/*   Updated: 2016/03/06 15:47:59 by dolewski         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,11 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(const char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-void				ft_putnbr_color(char *color, int n);
 void				ft_putchar_color(char *color, char c);
 void				ft_putstr_color(char *color, char *s);
+void				ft_putnbr_color(char *color, int n);
+void				ft_putchar_color_fd(int fd, char *color, char c);
+void				ft_putstr_color_fd(int fd, char *color, char *s);
 void				ft_putnbrendl(int n);
 
 /*
@@ -130,5 +132,7 @@ char				*ft_itoa_base(int n, int base);
 char				*ft_itoa(int n);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
+int					ft_copyt2d(char ***t1, char **t2, size_t size, size_t ns);
+void				ft_freet2d(char ***t, int len);
 
 #endif
